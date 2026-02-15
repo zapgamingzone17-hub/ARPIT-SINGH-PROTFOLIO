@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Arpit Singh | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root{
+  --accent:#00e5ff;
+  --bg:#0f0f0f;
+  --card:#171717;
+  --text:#f5f5f5;
+  --muted:#9e9e9e;
+}
+
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:"Inter",sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+.container{max-width:1100px;margin:auto;padding:30px;}
+
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.profile{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.profile img{
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+nav a{
+  text-decoration:none;
+  color:var(--muted);
+  margin-left:20px;
+  font-size:14px;
+}
+nav a:hover{color:var(--accent);}
+
+.section{margin-top:80px;}
+.section h2{
+  font-family:"Orbitron";
+  margin-bottom:25px;
+}
+
+/* HERO */
+.hero{
+  margin-top:70px;
+}
+.hero h1{
+  font-family:"Orbitron";
+  font-size:36px;
+}
+.highlight{
+  color:var(--accent);
+}
+.hero p{
+  color:var(--muted);
+  max-width:600px;
+}
+
+/* SERVICES */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:25px;
+}
+.card{
+  background:var(--card);
+  padding:22px;
+  border-radius:14px;
+  transition:.3s;
+}
+.card:hover{
+  transform:translateY(-6px);
+  border:1px solid var(--accent);
+}
+.service-icon{
+  font-size:24px;
+  color:var(--accent);
+  margin-bottom:12px;
+}
+.card:hover .service-icon{
+  text-shadow:0 0 12px var(--accent);
+}
+.card p{color:var(--muted);}
+
+/* PROJECT */
+.project{
+  background:var(--card);
+  padding:25px;
+  border-radius:14px;
+}
+.project a{
+  text-decoration:none;
+  color:var(--accent);
+  font-weight:600;
+}
+
+/* CONTACT FORM */
+.contact input,.contact textarea{
+  width:100%;
+  padding:12px;
+  margin-bottom:15px;
+  border-radius:8px;
+  border:1px solid #333;
+  background:#141414;
+  color:#fff;
+}
+
+textarea{
+  resize:none;
+  min-height:120px;
+  overflow:hidden;
+}
+
+button{
+  padding:12px 20px;
+  border:none;
+  border-radius:8px;
+  background:var(--accent);
+  font-weight:600;
+  cursor:pointer;
+}
+button:hover{
+  opacity:.8;
+}
+
+/* SOCIAL */
+.social{
+  display:flex;
+  flex-wrap:wrap;
+  gap:25px;
+}
+.social a{
+  text-decoration:none;
+  color:var(--muted);
+  display:flex;
+  align-items:center;
+  gap:8px;
+  transition:.3s;
+}
+.social a:hover{
+  color:var(--accent);
+}
+
+/* AUTO SCROLL WORK */
+.scroll-wrapper{
+  overflow:hidden;
+}
+.scroll-content{
+  display:flex;
+  gap:20px;
+}
+.scroll-content img{
+  height:170px;
+  border-radius:12px;
+  transition:.3s;
+}
+.scroll-content img:hover{
+  transform:scale(1.07);
+}
+
+footer{
+  margin-top:80px;
+  text-align:center;
+  color:var(--muted);
+  font-size:13px;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<header>
+  <div class="profile">
+    <img src="LOGO.jpeg" alt="Profile">
+    <div>
+      <strong>Arpit Singh</strong><br>
+      <span style="font-size:13px;color:var(--muted)">
+        Web Developer • Graphic Designer • Video Editor
+      </span>
+    </div>
+  </div>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero-wrapper">
+
+  <!-- LEFT SIDE -->
+  <div class="hero-left">
+    <h1>Hi, I'm <span class="highlight">Arpit Singh</span></h1>
+    <p>
+      B.Tech CSE student focused on building responsive websites
+      and creating impactful digital experiences.
+    </p>
+  </div>
+
+  <!-- RIGHT SIDE -->
+  <div class="hero-right">
+    <div class="scroll-wrapper" id="scrollWrapper">
+      <div class="scroll-content">
+        <img src="THUMBNAIL 1.jpeg">
+        <img src="THUMBNAIL 2.jpeg">
+        <img src="THUMBNAIL 3.jpg">
+        <img src="THUMBNAIL 4.jpeg">
+        <img src="THUMBNAIL 5.jpg">
+        <img src="THUMBNAIL 6.jpg">
+
+        <!-- Duplicate -->
+        <img src="THUMBNAIL 1.jpeg">
+        <img src="THUMBNAIL 2.jpeg">
+        <img src="THUMBNAIL 3.jpg">
+        <img src="THUMBNAIL 4.jpeg">
+        <img src="THUMBNAIL 5.jpg">
+        <img src="THUMBNAIL 6.jpg">
+      </div>
+    </div>
+  </div>
+
+</section>
+<!-- SERVICES -->
+<section id="services" class="section">
+  <h2>Services</h2>
+  <div class="grid">
+
+    <div class="card">
+      <div class="service-icon"><i class="fas fa-code"></i></div>
+      <h3>Website Development</h3>
+      <p>Modern and responsive websites built with clean and scalable code.</p>
+    </div>
+
+    <div class="card">
+      <div class="service-icon"><i class="fas fa-image"></i></div>
+      <h3>Thumbnail Design</h3>
+      <p>High-converting YouTube thumbnails designed to boost engagement.</p>
+    </div>
+
+    <div class="card">
+      <div class="service-icon"><i class="fas fa-pen-nib"></i></div>
+      <h3>Logo & Branding</h3>
+      <p>Custom gaming and modern brand identity designs.</p>
+    </div>
+
+    <div class="card">
+      <div class="service-icon"><i class="fas fa-video"></i></div>
+      <h3>Video Editing</h3>
+      <p>Professional and engaging video production for creators.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROJECT -->
+<section id="projects" class="section">
+  <h2>Featured Project</h2>
+  <div class="project">
+    <h3>Business Website</h3>
+    <p style="color:var(--muted)">
+      Responsive website built using HTML, CSS and JavaScript.
+    </p>
+    <a href="https://yourwebsite.com" target="_blank">
+      Visit Live Site →
+    </a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section contact">
+  <h2>Contact Me</h2>
+  <form action="mailto:zapgamingzone17@gmail.com" method="POST" enctype="text/plain">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" placeholder="Your Message" required
+      oninput="this.style.height='auto';this.style.height=this.scrollHeight+'px'"></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+
+<!-- SOCIAL -->
+<section class="section">
+  <h2>Connect With Me</h2>
+  <div class="social">
+    <a href="https://instagram.com/softune_ig" target="_blank">
+      <i class="fab fa-instagram"></i> Instagram
+    </a>
+    <a href="https://github.com/YOURUSERNAME" target="_blank">
+      <i class="fab fa-github"></i> GitHub
+    </a>
+    <a href="https://youtube.com/@wizardplaysx" target="_blank">
+      <i class="fab fa-youtube"></i> YouTube
+    </a>
+    <a href="mailto:zapgamingzone17@gmail.com">
+      <i class="fas fa-envelope"></i> Email
+    </a>
+    <a href="tel:+918920612032">
+      <i class="fas fa-phone"></i> Phone
+    </a>
+  </div>
+</section>
+
+<footer>
+© <script>document.write(new Date().getFullYear())</script> Arpit Singh. All Rights Reserved.
+</footer>
+
+</div>
+
+<script>
+const scrollContainer=document.getElementById("scrollWrapper");
+let autoScroll=setInterval(()=>{
+  scrollContainer.scrollLeft+=1;
+  if(scrollContainer.scrollLeft>=scrollContainer.scrollWidth/2){
+    scrollContainer.scrollLeft=0;
+  }
+},20);
+
+scrollContainer.addEventListener("mouseenter",()=>clearInterval(autoScroll));
+scrollContainer.addEventListener("mouseleave",()=>{
+  autoScroll=setInterval(()=>{
+    scrollContainer.scrollLeft+=1;
+    if(scrollContainer.scrollLeft>=scrollContainer.scrollWidth/2){
+      scrollContainer.scrollLeft=0;
+    }
+  },20);
+});
+</script>
+
+</body>
+</html>
