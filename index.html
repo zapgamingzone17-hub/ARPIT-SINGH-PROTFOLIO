@@ -17,9 +17,9 @@
   --muted:#9e9e9e;
 }
 
-*{box-sizing:border-box;}
+*{box-sizing:border-box;margin:0;padding:0;}
+
 body{
-  margin:0;
   font-family:"Inter",sans-serif;
   background:var(--bg);
   color:var(--text);
@@ -31,6 +31,8 @@ header{
   display:flex;
   justify-content:space-between;
   align-items:center;
+  flex-wrap:wrap;
+  gap:15px;
 }
 
 .profile{
@@ -54,68 +56,113 @@ nav a{
 }
 nav a:hover{color:var(--accent);}
 
+/* HERO */
+.hero-wrapper{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:40px;
+  margin-top:70px;
+  flex-wrap:wrap;
+}
+
+.hero-left{
+  flex:1;
+  min-width:280px;
+}
+
+.hero-left h1{
+  font-family:"Orbitron";
+  font-size:36px;
+  margin-bottom:15px;
+}
+
+.highlight{color:var(--accent);}
+
+.hero-left p{
+  color:var(--muted);
+  max-width:600px;
+}
+
+.hero-right{
+  flex:1;
+  min-width:280px;
+}
+
+/* Scroll */
+.scroll-wrapper{
+  overflow:hidden;
+  width:100%;
+}
+
+.scroll-content{
+  display:flex;
+  gap:20px;
+}
+
+.scroll-content img{
+  width:260px;
+  height:160px;
+  object-fit:cover;
+  border-radius:12px;
+  transition:.3s;
+}
+
+.scroll-content img:hover{
+  transform:scale(1.07);
+}
+
+/* Sections */
 .section{margin-top:80px;}
+
 .section h2{
   font-family:"Orbitron";
   margin-bottom:25px;
 }
 
-/* HERO */
-.hero{
-  margin-top:70px;
-}
-.hero h1{
-  font-family:"Orbitron";
-  font-size:36px;
-}
-.highlight{
-  color:var(--accent);
-}
-.hero p{
-  color:var(--muted);
-  max-width:600px;
-}
-
-/* SERVICES */
+/* Cards */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
   gap:25px;
 }
+
 .card{
   background:var(--card);
   padding:22px;
   border-radius:14px;
   transition:.3s;
 }
+
 .card:hover{
   transform:translateY(-6px);
   border:1px solid var(--accent);
 }
+
 .service-icon{
   font-size:24px;
   color:var(--accent);
   margin-bottom:12px;
 }
-.card:hover .service-icon{
-  text-shadow:0 0 12px var(--accent);
-}
+
 .card p{color:var(--muted);}
 
-/* PROJECT */
+/* Project */
 .project{
   background:var(--card);
   padding:25px;
   border-radius:14px;
 }
+
 .project a{
   text-decoration:none;
   color:var(--accent);
   font-weight:600;
 }
 
-/* CONTACT FORM */
-.contact input,.contact textarea{
+/* Contact */
+.contact input,
+.contact textarea{
   width:100%;
   padding:12px;
   margin-bottom:15px;
@@ -123,12 +170,12 @@ nav a:hover{color:var(--accent);}
   border:1px solid #333;
   background:#141414;
   color:#fff;
+  font-size:14px;
 }
 
 textarea{
   resize:none;
   min-height:120px;
-  overflow:hidden;
 }
 
 button{
@@ -139,50 +186,73 @@ button{
   font-weight:600;
   cursor:pointer;
 }
-button:hover{
-  opacity:.8;
-}
 
-/* SOCIAL */
+button:hover{opacity:.8;}
+
+/* Social */
 .social{
   display:flex;
   flex-wrap:wrap;
   gap:25px;
 }
+
 .social a{
   text-decoration:none;
   color:var(--muted);
   display:flex;
   align-items:center;
   gap:8px;
-  transition:.3s;
-}
-.social a:hover{
-  color:var(--accent);
 }
 
-/* AUTO SCROLL WORK */
-.scroll-wrapper{
-  overflow:hidden;
-}
-.scroll-content{
-  display:flex;
-  gap:20px;
-}
-.scroll-content img{
-  height:170px;
-  border-radius:12px;
-  transition:.3s;
-}
-.scroll-content img:hover{
-  transform:scale(1.07);
-}
+.social a:hover{color:var(--accent);}
 
 footer{
   margin-top:80px;
   text-align:center;
   color:var(--muted);
   font-size:13px;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width:768px){
+
+  header{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  nav{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+  }
+
+  nav a{
+    margin-left:0;
+  }
+
+  .hero-wrapper{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .hero-left h1{
+    font-size:28px;
+  }
+
+  .scroll-content img{
+    width:200px;
+    height:130px;
+  }
+
+  .container{
+    padding:20px;
+  }
+
+  .section{
+    margin-top:60px;
+  }
+
 }
 </style>
 </head>
@@ -208,8 +278,6 @@ footer{
 </header>
 
 <section class="hero-wrapper">
-
-  <!-- LEFT SIDE -->
   <div class="hero-left">
     <h1>Hi, I'm <span class="highlight">Arpit Singh</span></h1>
     <p>
@@ -218,7 +286,6 @@ footer{
     </p>
   </div>
 
-  <!-- RIGHT SIDE -->
   <div class="hero-right">
     <div class="scroll-wrapper" id="scrollWrapper">
       <div class="scroll-content">
@@ -228,8 +295,6 @@ footer{
         <img src="THUMBNAIL 4.jpeg">
         <img src="THUMBNAIL 5.jpg">
         <img src="THUMBNAIL 6.jpg">
-
-        <!-- Duplicate -->
         <img src="THUMBNAIL 1.jpeg">
         <img src="THUMBNAIL 2.jpeg">
         <img src="THUMBNAIL 3.jpg">
@@ -239,8 +304,8 @@ footer{
       </div>
     </div>
   </div>
-
 </section>
+
 <!-- SERVICES -->
 <section id="services" class="section">
   <h2>Services</h2>
@@ -281,7 +346,7 @@ footer{
     <p style="color:var(--muted)">
       Responsive website built using HTML, CSS and JavaScript.
     </p>
-    <a href="https://yourwebsite.com" target="_blank">
+    <a href="https://github.com/zapgamingzone17-hub/ARPIT-SINGH-PROTFOLIO.git" target="_blank">
       Visit Live Site →
     </a>
   </div>
@@ -293,12 +358,10 @@ footer{
   <form action="mailto:zapgamingzone17@gmail.com" method="POST" enctype="text/plain">
     <input type="text" name="name" placeholder="Your Name" required>
     <input type="email" name="email" placeholder="Your Email" required>
-    <textarea name="message" placeholder="Your Message" required
-      oninput="this.style.height='auto';this.style.height=this.scrollHeight+'px'"></textarea>
+    <textarea name="message" placeholder="Your Message" required></textarea>
     <button type="submit">Send Message</button>
   </form>
 </section>
-
 
 <!-- SOCIAL -->
 <section class="section">
@@ -307,7 +370,7 @@ footer{
     <a href="https://instagram.com/softune_ig" target="_blank">
       <i class="fab fa-instagram"></i> Instagram
     </a>
-    <a href="https://github.com/YOURUSERNAME" target="_blank">
+    <a href="#">
       <i class="fab fa-github"></i> GitHub
     </a>
     <a href="https://youtube.com/@wizardplaysx" target="_blank">
